@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>4. 寻找两个有序数组的中位数 | lemon&#39;s blog</title>
+    <meta name="description" content="
+题目描述
+
+给定两个大小为 m 和 n 的有序数组  nums1 和  nums2。
+
+请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为  O(log(m + n))。
+
+你可以假设  nums1  和  nums2  不会同时为空。
+
+示例 1:
+
+nums1 = [1, 3]
+
+nums2 = [2]
+
+则中位数是 2.0
+示例 2:
+
+nums1 = [ ...">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="alternate" type="application/rss+xml" href="https://blog.volc.top/rss.xml" title="lemon&#39;s blog RSS Feed">
+    
+    <link rel="preload" href="/assets/css/0.styles.41ee851f.css" as="style"><link rel="preload" href="/assets/js/app.9ccd57e4.js" as="script"><link rel="preload" href="/assets/js/5.96c81f65.js" as="script"><link rel="preload" href="/assets/js/28.bc72cf55.js" as="script"><link rel="prefetch" href="/assets/js/1.03fbddf5.js"><link rel="prefetch" href="/assets/js/10.86034f06.js"><link rel="prefetch" href="/assets/js/11.7f31882c.js"><link rel="prefetch" href="/assets/js/12.d88e826f.js"><link rel="prefetch" href="/assets/js/13.a7bf8535.js"><link rel="prefetch" href="/assets/js/14.12fd603e.js"><link rel="prefetch" href="/assets/js/15.c74d7ea6.js"><link rel="prefetch" href="/assets/js/16.2303d7bc.js"><link rel="prefetch" href="/assets/js/17.d9cca057.js"><link rel="prefetch" href="/assets/js/18.6b7aa57b.js"><link rel="prefetch" href="/assets/js/19.ff6433ec.js"><link rel="prefetch" href="/assets/js/20.85ea340b.js"><link rel="prefetch" href="/assets/js/21.b8b3dd51.js"><link rel="prefetch" href="/assets/js/22.3330af4f.js"><link rel="prefetch" href="/assets/js/23.b7685245.js"><link rel="prefetch" href="/assets/js/24.76a08b9c.js"><link rel="prefetch" href="/assets/js/25.d7a90f64.js"><link rel="prefetch" href="/assets/js/26.c9a9c704.js"><link rel="prefetch" href="/assets/js/27.f7c580eb.js"><link rel="prefetch" href="/assets/js/29.d15156a8.js"><link rel="prefetch" href="/assets/js/30.5c34af22.js"><link rel="prefetch" href="/assets/js/31.c08b500b.js"><link rel="prefetch" href="/assets/js/32.3ab46a7d.js"><link rel="prefetch" href="/assets/js/33.3b8f38a5.js"><link rel="prefetch" href="/assets/js/34.cc5f940e.js"><link rel="prefetch" href="/assets/js/4.1edcbb05.js"><link rel="prefetch" href="/assets/js/6.01c2a728.js"><link rel="prefetch" href="/assets/js/7.85506fa1.js"><link rel="prefetch" href="/assets/js/8.dd3aa19b.js"><link rel="prefetch" href="/assets/js/9.a251fd11.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.36420dbc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.41ee851f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">lemon's blog </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">BLOG</a></li><li class="nav-item"><a href="/leetcode/" class="nav-link router-link-active">LEETCODE</a></li><li class="nav-item"><a href="https://github.com/lemon-lc" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <a href="/rss.xml" class="feed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">lemon's blog </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">BLOG</a></li><li class="mobile-nav-item"><a href="/leetcode/" class="nav-link router-link-active">LEETCODE</a></li><li class="mobile-nav-item"><a href="https://github.com/lemon-lc" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li> <li class="mobile-nav-item"><a href="/rss.xml" class="feed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        
+      </h1> <div class="post-meta"><!----> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2019/09/17">
+      Tue Sep 17 2019
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-d832e844><a href="/tag/leetcode" data-v-d832e844> leetcode </a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><h1 id="_4-寻找两个有序数组的中位数"><a href="#_4-寻找两个有序数组的中位数" class="header-anchor">#</a> 4. 寻找两个有序数组的中位数</h1> <h3 id="题目描述"><a href="#题目描述" class="header-anchor">#</a> 题目描述</h3> <p>给定两个大小为 m 和 n 的有序数组  nums1 和  nums2。</p> <p>请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为  O(log(m + n))。</p> <p>你可以假设  nums1  和  nums2  不会同时为空。</p> <p><strong>示例 1:</strong></p> <p>nums1 = [1, 3]</p> <p>nums2 = [2]</p> <p>则中位数是 2.0
+<strong>示例 2:</strong></p> <p>nums1 = [1, 2]</p> <p>nums2 = [3, 4]</p> <p>则中位数是 (2 + 3)/2 = 2.5</p> <h3 id="解法"><a href="#解法" class="header-anchor">#</a> 解法</h3> <h4 id="解法一（暴力法）"><a href="#解法一（暴力法）" class="header-anchor">#</a> 解法一（暴力法）</h4> <ul><li><p>解题思路：</p></li> <li><p>示例图解</p></li> <li><p>代码实现：</p></li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">findMedianSortedArrays</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums1<span class="token punctuation">,</span> nums2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> arr <span class="token operator">=</span> nums1<span class="token punctuation">;</span>
+  arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>nums2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  arr<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">-</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>len <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ans <span class="token operator">=</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>len <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span>len <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    ans <span class="token operator">=</span> arr<span class="token punctuation">[</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>len <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>执行结果：
+<img src="https://raw.githubusercontent.com/volcanoliuc/vue-blog/images/images20190916104630.png" alt="执行结果"></li></ul></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h3 active"><a href="#题目描述" title="题目描述">题目描述</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#解法" title="解法">解法</a></div></div></div></div> <footer class="footer" data-v-582f9766><div class="footer-left-wrap" data-v-582f9766><ul class="contact" data-v-582f9766><li class="contact-item" data-v-582f9766><a href="https://github.com/lemon-lc" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-582f9766><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-582f9766><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-582f9766></path></svg>
+          
+        </a></li><li class="contact-item" data-v-582f9766><a href="mailto:liucannn@sina.com" class="nav-link external" data-v-582f9766><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail" data-v-582f9766><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" data-v-582f9766></path><polyline points="22,6 12,13 2,6" data-v-582f9766></polyline></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-582f9766><ul class="copyright" data-v-582f9766><li class="copyright-item" data-v-582f9766><a href="/leetcode/2019/09/17/_4-%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/.html" class="nav-link" data-v-582f9766>Lemon © 2018</a></li></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9ccd57e4.js" defer></script><script src="/assets/js/5.96c81f65.js" defer></script><script src="/assets/js/28.bc72cf55.js" defer></script>
+  </body>
+</html>

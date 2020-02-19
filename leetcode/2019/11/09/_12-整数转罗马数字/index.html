@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>12. 整数转罗马数字 | lemon&#39;s blog</title>
+    <meta name="description" content="
+题目描述
+
+罗马数字包含以下七种字符： I， V， X， L，C，D  和  M。
+
+&gt; 字符 数值
+&gt; I 1
+&gt; V 5
+&gt; X 10
+&gt; L 50
+&gt; C 100
+&gt; D 500
+&gt; M 1000
+
+例如， 罗马数字 2 写做  II ，即为两个并列的 1。12 写做  XII ，即为  X + II 。 27 写做   XXVII, 即为  XX + V + II 。
+
+通常情 ...">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="alternate" type="application/rss+xml" href="https://blog.volc.top/rss.xml" title="lemon&#39;s blog RSS Feed">
+    
+    <link rel="preload" href="/assets/css/0.styles.41ee851f.css" as="style"><link rel="preload" href="/assets/js/app.9ccd57e4.js" as="script"><link rel="preload" href="/assets/js/5.96c81f65.js" as="script"><link rel="preload" href="/assets/js/25.d7a90f64.js" as="script"><link rel="prefetch" href="/assets/js/1.03fbddf5.js"><link rel="prefetch" href="/assets/js/10.86034f06.js"><link rel="prefetch" href="/assets/js/11.7f31882c.js"><link rel="prefetch" href="/assets/js/12.d88e826f.js"><link rel="prefetch" href="/assets/js/13.a7bf8535.js"><link rel="prefetch" href="/assets/js/14.12fd603e.js"><link rel="prefetch" href="/assets/js/15.c74d7ea6.js"><link rel="prefetch" href="/assets/js/16.2303d7bc.js"><link rel="prefetch" href="/assets/js/17.d9cca057.js"><link rel="prefetch" href="/assets/js/18.6b7aa57b.js"><link rel="prefetch" href="/assets/js/19.ff6433ec.js"><link rel="prefetch" href="/assets/js/20.85ea340b.js"><link rel="prefetch" href="/assets/js/21.b8b3dd51.js"><link rel="prefetch" href="/assets/js/22.3330af4f.js"><link rel="prefetch" href="/assets/js/23.b7685245.js"><link rel="prefetch" href="/assets/js/24.76a08b9c.js"><link rel="prefetch" href="/assets/js/26.c9a9c704.js"><link rel="prefetch" href="/assets/js/27.f7c580eb.js"><link rel="prefetch" href="/assets/js/28.bc72cf55.js"><link rel="prefetch" href="/assets/js/29.d15156a8.js"><link rel="prefetch" href="/assets/js/30.5c34af22.js"><link rel="prefetch" href="/assets/js/31.c08b500b.js"><link rel="prefetch" href="/assets/js/32.3ab46a7d.js"><link rel="prefetch" href="/assets/js/33.3b8f38a5.js"><link rel="prefetch" href="/assets/js/34.cc5f940e.js"><link rel="prefetch" href="/assets/js/4.1edcbb05.js"><link rel="prefetch" href="/assets/js/6.01c2a728.js"><link rel="prefetch" href="/assets/js/7.85506fa1.js"><link rel="prefetch" href="/assets/js/8.dd3aa19b.js"><link rel="prefetch" href="/assets/js/9.a251fd11.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.36420dbc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.41ee851f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">lemon's blog </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">BLOG</a></li><li class="nav-item"><a href="/leetcode/" class="nav-link router-link-active">LEETCODE</a></li><li class="nav-item"><a href="https://github.com/lemon-lc" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <a href="/rss.xml" class="feed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">lemon's blog </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">BLOG</a></li><li class="mobile-nav-item"><a href="/leetcode/" class="nav-link router-link-active">LEETCODE</a></li><li class="mobile-nav-item"><a href="https://github.com/lemon-lc" target="_blank" rel="noopener noreferrer" class="nav-link external">Github</a></li> <li class="mobile-nav-item"><a href="/rss.xml" class="feed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        
+      </h1> <div class="post-meta"><!----> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2019/11/09">
+      Sat Nov 09 2019
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-d832e844><a href="/tag/leetcode" data-v-d832e844> leetcode </a></li><li class="post-tag" data-v-d832e844><a href="/tag/罗马数字" data-v-d832e844> 罗马数字 </a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><h1 id="_12-整数转罗马数字"><a href="#_12-整数转罗马数字" class="header-anchor">#</a> 12. 整数转罗马数字</h1> <h3 id="题目描述"><a href="#题目描述" class="header-anchor">#</a> 题目描述</h3> <p>罗马数字包含以下七种字符： I， V， X， L，C，D  和  M。</p> <blockquote><p>字符 数值
+I 1
+V 5
+X 10
+L 50
+C 100
+D 500
+M 1000</p></blockquote> <p>例如， 罗马数字 2 写做  II ，即为两个并列的 1。12 写做  XII ，即为  X + II 。 27 写做   XXVII, 即为  XX + V + II 。</p> <p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做  IIII，而是  IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为  IX。这个特殊的规则只适用于以下六种情况：</p> <p>I  可以放在  V (5) 和  X (10) 的左边，来表示 4 和 9。
+X  可以放在  L (50) 和  C (100) 的左边，来表示 40 和  90。 
+C  可以放在  D (500) 和  M (1000) 的左边，来表示  400 和  900。
+给定一个整数，将其转为罗马数字。输入确保在 1  到 3999 的范围内。</p> <p><strong>示例  1:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>输入: 3
+输出: &quot;III&quot;
+</code></pre></div><p><strong>示例  2:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>输入: 4
+输出: &quot;IV&quot;
+</code></pre></div><p><strong>示例  3:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>输入: 9
+输出: &quot;IX&quot;
+</code></pre></div><p><strong>示例  4:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>输入: 58
+输出: &quot;LVIII&quot;
+解释: L = 50, V = 5, III = 3.
+</code></pre></div><p><strong>示例  5:</strong></p> <div class="language- extra-class"><pre class="language-text"><code>输入: 1994
+输出: &quot;MCMXCIV&quot;
+解释: M = 1000, CM = 900, XC = 90, IV = 4.
+</code></pre></div><h3 id="解法"><a href="#解法" class="header-anchor">#</a> 解法:</h3> <ul><li>解题思路：</li></ul> <p>分析罗马数字个位的转换规则：</p> <p>小于等于 3 的时候由 3 个 I 组成<br>
+等于 4 的时候由 I 和中位 V (5) 组成 IV<br>
+大于等于 5 小于 9 的时候则是由 V 和 num - 5 个 I 组成<br>
+等于 9 的时候有 I 和下一级的数字 X (10) 组成 IX\</p> <p>所以个位数的生成规则抽象为一个方法：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">&lt;=</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">'I'</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">===</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">'IV'</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">===</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">'IX'</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">V</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token string">'I'</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>十位百位千位的转换规则也是类似，只需要替换一下当前位数所需的字母即可</p> <ul><li>代码实现：</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * @param {number} num
+ * @return {string}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">intToRoman</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> m <span class="token operator">=</span> <span class="token function">mRomans</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>num <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token function">cRomans</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>num <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token function">xRomans</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>num <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> i <span class="token operator">=</span> <span class="token function">iRomans</span><span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> m <span class="token operator">+</span> c <span class="token operator">+</span> x <span class="token operator">+</span> i<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">mRomans</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">getRomans</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> <span class="token string">'M'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">cRomans</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">getRomans</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'M'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">xRomans</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">getRomans</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> <span class="token string">'X'</span><span class="token punctuation">,</span> <span class="token string">'L'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">iRomans</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">getRomans</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> <span class="token string">'I'</span><span class="token punctuation">,</span> <span class="token string">'V'</span><span class="token punctuation">,</span> <span class="token string">'X'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">getRomans</span><span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> base<span class="token punctuation">,</span> mid<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">&lt;=</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token keyword">return</span> base<span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">===</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token keyword">return</span> base <span class="token operator">+</span> next<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">===</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">return</span> base <span class="token operator">+</span> mid<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> mid <span class="token operator">+</span> base<span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span>num <span class="token operator">-</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>执行结果：
+<img src="https://raw.githubusercontent.com/lemon-lc/vue-blog/images/images20191109125950.png" alt="执行结果"></li></ul></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h3 active"><a href="#题目描述" title="题目描述">题目描述</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#解法" title="解法:">解法:</a></div></div></div></div> <footer class="footer" data-v-582f9766><div class="footer-left-wrap" data-v-582f9766><ul class="contact" data-v-582f9766><li class="contact-item" data-v-582f9766><a href="https://github.com/lemon-lc" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-582f9766><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-582f9766><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-582f9766></path></svg>
+          
+        </a></li><li class="contact-item" data-v-582f9766><a href="mailto:liucannn@sina.com" class="nav-link external" data-v-582f9766><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail" data-v-582f9766><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" data-v-582f9766></path><polyline points="22,6 12,13 2,6" data-v-582f9766></polyline></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-582f9766><ul class="copyright" data-v-582f9766><li class="copyright-item" data-v-582f9766><a href="/leetcode/2019/11/09/_12-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/.html" class="nav-link" data-v-582f9766>Lemon © 2018</a></li></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9ccd57e4.js" defer></script><script src="/assets/js/5.96c81f65.js" defer></script><script src="/assets/js/25.d7a90f64.js" defer></script>
+  </body>
+</html>
